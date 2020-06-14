@@ -29,7 +29,7 @@ function listElementCounter(list){
 
 function initArrays(){
     let tempList = global_article_list.slice(global_article_list.indexOf('\n') + 1);
-    for(int i = 0; i <= global_line_length; i++){
+    for(var i = 0; i <= global_line_length; i++){
         tempList = tempList.slice(tempList.indexOf(',') + 1);
 
         global_links_array.push(tempList.slice(0, tempList.indexOf(',')));
