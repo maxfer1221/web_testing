@@ -49,3 +49,5 @@ function initArrays(){
 
     }
 }
+
+getData();
