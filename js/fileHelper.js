@@ -8,10 +8,10 @@ let global_dates_array = [];
 let global_line_length = undefined;
 
 //fetch csv files and parse them into text.
-async function getData(url){
-    const response = await fetch(url);
-    const data = await response.text();
-    global_article_list = data;
+function getData(url){
+    fetch(url)
+        .then(response => response.text())
+        .then(text => global_article_list = text);
 }
 
 function listElementCounter(list){
