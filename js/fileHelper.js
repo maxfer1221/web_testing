@@ -21,7 +21,7 @@ function listElementCounter(list){
     let tempList  = list;
     let tempList2 = list;
     let newLineIndex = tempList.indexOf('\n');
-    while(newLineIndex < list.length - 1){
+    while(newLineIndex < list.length - 1 && newLineIndex != -1){
         tempList2 = tempList;
         tempList = tempList.slice(tempList.indexOf('\n') + 1);
         newLineIndex = tempList.indexOf('\n')
@@ -44,7 +44,7 @@ function initArrays(){
         global_likes_array.push(tempList.slice(0, tempList.indexOf(',')));
         tempList = tempList.slice(tempList.indexOf(',') + 1);
 
-        global_mntns_array.push(tempList.slice(0, tempList.indexOf(',')));
+        global_mntns_array.push(tempList.slice(0, tempList.indexOf('\n')));
         tempList = tempList.slice(tempList.indexOf('\n') + 1);
 
     }
