@@ -50,4 +50,4 @@ function initArrays(){
     }
 }
 
-getData();
+getData('csv/blacklivesmatter_05-25_06-12_topTweets_urlSummary_test_file.csv');
