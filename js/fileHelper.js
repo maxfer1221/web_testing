@@ -8,10 +8,13 @@ let global_dates_array = [];
 let global_line_length = undefined;
 
 //fetch csv files and parse them into text.
-function getData(url){
-    fetch(url)
-        .then(response => response.text())
-        .then(text => global_article_list = text);
+async function getData(url){
+    const response = await fetch(url);
+    const data = await response.text();
+    global_article_list = data;
+    global_line_length = listElementCounter(global_article_list);
+    console.log(global_line_length);
+    initArrays();
 }
 
 function listElementCounter(list){
@@ -46,9 +49,3 @@ function initArrays(){
 
     }
 }
-
-getData('csv/blacklivesmatter_05-25_06-12_topTweets_urlSummary_test_file.csv');
-
-global_line_length = listElementCounter(global_article_list);
-
-console.log(global_article_list);
