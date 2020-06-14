@@ -5,5 +5,6 @@ console.log(global_article_list)
 async function getData(url){
     const response = await fetch(url);
     const data = await response.text();
+    console.log(data);
     return data;
 }
